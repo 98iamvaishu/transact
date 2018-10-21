@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+  <a href="{% url 'borrow' %}" class="btn btn-secondary"role="button">Add Borrower</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Interest</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Terms</th>
+      <th scope="col">Date</th>
+      <th scope="col">Interest_Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>{% for object in ob %}<br>
+      <th scope="row"></th>
+      <form action="/paid/" method ="POST">{% csrf_token %}
+
+      <td><a href="/paid/{{object.id}}/" name = "link">{{object.name}}</a></td></form>
+      <td>{{object.amount}}</td>
+      <td>{{object.interest}}</td>
+      <td>{{object.duration}}</td>
+      <td>{{object.terms}}</td>
+      <td>{{object.date}}</td>
+      <td>{{object.intamt}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+</body>
+</html>

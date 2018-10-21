@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> PAID</title>
+</head>
+<body>
+<form action="" method="POST">
+{% csrf_token %}
+Name:<select name="ab">
+	<option selected = "selected" disabled>Borrowers</option>
+	{% for i in ob %}
+  <option value="{{i.name}}">{{i.name}}</option>
+{% endfor %}<br>
+</select>
+<br><br>Princi_amt:<br><input type = "text" name = "pamount"><br>
+int_amt:<br><input type = "text" name = "iamount"><br>
+<input class="btn btn-primary" type="submit" value="Submit">
+</form>
+<p>{{amt}}</p>
+</body>
+</html>

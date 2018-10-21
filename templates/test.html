@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Create a Post </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel ="stylesheet" href = "{% static 'css/home.css' %}" type = "text/css" >
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light " id="a5">
+            <div class="container">
+                <a class="navbar-brand" href="" >Home</a>
+                <div class="ab">
+                    <a class="navbar-brand" href="{% url 'borrow' %}">Add amount</a>
+                    <a class="navbar-brand" href="{% url 'borrow' %}">Add borrower</a>
+                    <a class="navbar-brand" href="{% url 'list1' %}" >List</a>
+                    <a class="navbar-brand" href="{% url 'logout' %}">Log Out</a>
+                </div>
+            </div>
+        </nav>
+        <div class = "container" id = "li">
+            <div class = "row">
+                <div class= "col-4" >
+                    <img src={% static "images/back.jpg" %} style="width:400px;height:400px;margin-left:150px;margin-top:80px;">
+                </div>
+                <div class = "col-8">
+                    <div class="container" id="test">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="card" style="width: 400px;height:600px">
+                                <div class="card-body">
+                                    Name:<br><input type="text" class="form-control" name="name">
+                                    Phone:<br><input type="number" class="form-control" name="phone">
+                                    Amount:<br><input type="number" class="form-control" name="amount">
+                                    Interest:<br><input type="number" class="form-control" name="interest">
+                                    Duration:<br><input type="number" class="form-control" name="duration">
+                                    <select class="custom-select">
+                                        <option selected>Terms</option>
+                                        <option value="week">Week</option>
+                                        <option value="month">Month</option>
+                                        <option value="year">Year</option>
+                                    </select>
+                                    Date:<br><input type="date" class="form-control" name="date"> <br/>
+                                    <input type="submit" value="Save">
+
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </body>
+            </html>

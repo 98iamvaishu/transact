@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>Create a Post </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel ="stylesheet" href = "{% static 'css/home.css' %}" type = "text/css" >
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light " id="a5">
+            <div class="container">
+                <a class="navbar-brand" href="" >Home</a>
+                <div class="ab">
+                    <a class="navbar-brand" href="{% url 'borrow' %}">Add amount</a>
+                    <a class="navbar-brand" href="{% url 'borrow' %}">Add borrower</a>
+                    <a class="navbar-brand" href="{% url 'list1' %}" >List</a>
+                    <a class="navbar-brand" href="{% url 'logout' %}">Log Out</a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class = "container">
+            <h3 style="margin-top:20px; margin-left:40px">Recent Payments</h3>
+            <div class = "row" style="margin-top: 30px">
+                <div class="col-5">
+                     {% for i in bor %}
+                        <div class="card" style="width: 360px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{i.name}}</h5>
+                                <p class="card-text"> {{i.amount}}<br>{{i.interest}}<br>{{i.date}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        {%endfor%}
+                    </div>
+                    <div class="col-7">
+                        <div class="card" style="width: 520px;">
+                            <div class="card-body">
+                                <p class="card-title"><strong>Hi {{fname}}</strong></p>
+                                <div class="alert alert-success">Amount in account to lend</div>
+                                <button type="button" class="btn btn-default">Rs</button><hr>
+                                <div class="alert alert-success">Total amount to get from all borrower</div>
+                                <button type="button" class="btn btn-default">Rs.{{sum1}}</button><hr>
+                                <div class="alert alert-success">Remaining amount to receive</div>
+                                <button type="button" class="btn btn-default">Rs</button><hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </body>
+    </html>

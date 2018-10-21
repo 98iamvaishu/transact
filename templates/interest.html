@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="/interest/{{borrow.id}}/" method="POST">
+{% csrf_token %}
+<p>{{amt}}</p>
+<p>{{bor.name}}</p>
+
+
+</body>
+</html>

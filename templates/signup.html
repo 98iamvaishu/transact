@@ -7,7 +7,16 @@
       <link rel ="stylesheet" href = "{% static 'css/home.css' %}" type = "text/css" >
    </head>
    <body>
-      <div class="container" id="signin">
+      <nav class="navbar navbar-expand-lg navbar-light " id="a5">
+         <div class="container">
+            <a class="navbar-brand" href="" >Home</a>
+            <div class="ab">
+               <a class="navbar-brand" href="{% url 'signin' %}">Signin</a>
+               <a class="navbar-brand" href="{% url 'signup' %}">Signup</a>
+            </div>
+         </div>
+      </nav>
+      <div class="container" id="signup">
          <div class="card" style="width: 400px;">
             <div class="card-body">
                <div class="col-xs-3">

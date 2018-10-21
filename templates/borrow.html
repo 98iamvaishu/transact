@@ -20,16 +20,18 @@
                 </div>
             </div>
         </nav>
-        <div class = "container" id = "li">
+        <div class = "container" id = "borrow">
+            <div class="card" style="width: 1000px;height:800px">
+                                <div class="card-body">
             <div class = "row">
                 <div class= "col-4" >
-                    <img src={% static "images/back.jpg" %} style="width:400px;height:400px;margin-left:150px;margin-top:80px;">
+                    <img src={% static "images/back.jpg" %} style="width:400px;height:500px;margin-left:150px;margin-top:70px;">
                 </div>
                 <div class = "col-8">
                     <div class="container" id="test">
                         <form action="" method="POST">
                             {% csrf_token %}
-                            <div class="card" style="width: 400px;height:600px">
+                            <div class="card" style="width: 400px;height:500px">
                                 <div class="card-body">
                                     Name:<br><input type="text" class="form-control" name="name">
                                     Phone:<br><input type="number" class="form-control" name="phone">

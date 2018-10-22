@@ -29,5 +29,5 @@ urlpatterns = [
     path('create/', create, name='create'),
     path('borrow/', borrower, name='borrow'),
     path('list1/', list1, name='list1'),
-    path('paid/', paidfun, name='paid'),
+    path('paid/<int:borrowerid>/', paidfun, name='paid'),
 ]

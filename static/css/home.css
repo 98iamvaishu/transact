@@ -1,11 +1,23 @@
+body
+{
+    background-image:url('{{ STATIC_URL }}images/sample.JPG');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 #a5
 {
-	background-color: blue;
+	background-color: #8860d0;
 }
 #signin
 {
-	margin-left: 500px;
-	margin-top: 200px;
+	border-bottom-right-radius: 400px 700px;
+	border-bottom-left-radius: 100px 100px;
+	border-bottom-width: 10px;
+	border-bottom:20px solid #5680e9;
+	padding:150px;
+	background-color: #84ceed;
+	
 }
 #bg
 {
@@ -14,16 +26,45 @@
 }
 #signup
 {
-	margin-left:500px;
-	margin-top:100px;
+	border-bottom-right-radius: 400px 700px;
+	border-bottom-left-radius: 100px 100px;
+	border-bottom-width: 10px;
+	border-bottom:25px solid #5680e9;
+	padding:150px;
+	background-color: #84ceed;
+	
 }
 #signin1
 {
-	margin-left: 500px;
-	margin-top: 100px;
+	border-bottom-right-radius: 400px 700px;
+	border-bottom-left-radius: 100px 100px;
+	border-bottom-width: 10px;
+	border-bottom:25px solid #5680e9;
+	padding:100px;
+	background-color: #84ceed;
+
 }
 #test
 {
 	margin-top:50px;
 	margin-left: 150px;
+	#d9ccff
+}
+#a
+{
+	margin-left: 50px;
+}
+#paid
+{
+	margin-left: 500px;
+	margin-top: 100px;
+}
+#main
+{
+	border-bottom-right-radius: 400px 700px;
+	border-bottom-left-radius: 100px 100px;
+	border-bottom-width: 10px;
+	border-bottom:20px solid #5680e9;
+	padding:200px;
+	background-color: #84ceed;
 }

@@ -25,9 +25,16 @@ class Borrower(models.Model):
 
 
 class Paid(models.Model):
-    pay = models.OneToOneField(
+    pay = models.ForeignKey(
         Borrower, primary_key=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=20, null=True, blank=True)
     pamt = models.FloatField(null=True, blank=True)
     iamt = models.FloatField(null=True, blank=True)
+    date = models.DateField(null=True, blank=True)
 
+
+class History(models.Model):
+    history = models.OneToOneField(Paid, on_delete=models.CASCADE, null=True)
+    date = models.DateField(null=True, blank=True)
+    pamount = models.FloatField(null=True, blank=True)
+    iamount = models.FloatField(null=True, blank=True)

@@ -91,7 +91,7 @@ def borrower(request):
 		bor = Borrower.objects.create(name=name, phone=phone, date=date, amount=amount, interest=interest,
 									  duration=duration, terms=terms, intamt=intamt, lender=user)
 		print(bor.name)
-		return redirect("/list1/")
+		return redirect("/dashboard/")
 	return render(request, "borrow.html")
 
 
@@ -121,10 +121,10 @@ def test(request):
 
 
 def home(request):
-	return render(request, "home1.html")
+	return render(request, "home.html")
 
 
-def create(request):
+def dashboard(request):
 	user = request.user
 	fname = user.first_name
 	lender = Lender.objects.get(user=user)

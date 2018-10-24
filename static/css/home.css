@@ -20,7 +20,7 @@ h5
 	border-bottom-left-radius: 100px 100px;
 	border-bottom-width: 10px;
 	border-bottom:20px solid #5680e9;
-	padding:150px;
+	padding:70px;
 	background-color: #84ceed;
 	
 }
@@ -35,7 +35,7 @@ h5
 	border-bottom-left-radius: 100px 100px;
 	border-bottom-width: 10px;
 	border-bottom:25px solid #5680e9;
-	padding:100px;
+	padding:70px;
 	background-color: #84ceed;
 	
 }
@@ -45,7 +45,7 @@ h5
 	border-bottom-left-radius: 100px 100px;
 	border-bottom-width: 10px;
 	border-bottom:25px solid #5680e9;
-	padding:100px;
+	padding:45px;
 	background-color: #84ceed;
 
 }
@@ -70,6 +70,10 @@ h5
 	border-bottom-left-radius: 100px 100px;
 	border-bottom-width: 10px;
 	border-bottom:20px solid #5680e9;
-	padding:250px;
+	padding:70px;
 	background-color: #84ceed;
+}
+.card
+{
+	background-color:red;
 }

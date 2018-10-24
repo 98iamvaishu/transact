@@ -19,14 +19,14 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', home, name='home1'),
     path('admin/', admin.site.urls),
     path('signup/', signup, name='signup'),
     path('signin/', signin, name='signin'),
     path('signin1/', signin1, name='signin1'),
     path('logout/', logout1, name='logout'),
     path('test/', test, name='test'),
-    path('create/', create, name='create'),
+    path('dashboard/', dashboard, name='create'),
     path('borrow/', borrower, name='borrow'),
     path('list1/', list1, name='list1'),
     path('paid/<int:borrowerid>/', paidfun, name='paid'),

@@ -1,45 +1,35 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{% load static %}
-		<title>Signin</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		<link rel ="stylesheet" href = "{% static 'css/home.css' %}" type = "text/css" >
-	</head>
-	<body>
-		<form action ="" method = "POST">
-			{% csrf_token %}
-			<nav class="navbar navbar-expand-lg navbar-light " id="a5">
-				<div class="container">
-					<a class="navbar-brand" href="" ><h5>Home</h5></a>
-					<div class="ab">
-						<a class="navbar-brand" href="{% url 'signin' %}"><h5>Signin</h5></a>
-						<a class="navbar-brand" href="{% url 'signup' %}"><h5>Signup</h5></a>
-					</div>
+{% extends 'base.html' %}
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4">
+				<div style="text-align:center">
+					
+				<h4>🗝️ Login</h4>
+				<br>
 				</div>
-			</nav>
-			
-			<div class="container" id="signin">
-				<div class="card" style="width: 400px;height:300px;background-color:#d9ccff">
-					<div class="card-body">
-						<h3 style = "margin-left:130px"> Sign In</h3>
-						<div class="col-xs-3">
-							
-							<i class="fa fa-envelope icon"></i>
-							<h5 style= "color:black">Email</h5><input type="email" class="form-control" name="email">
-						</div><hr>
-						<div class="col-xs-3">
-							<i class="fa fa-key icon"></i>
-							<h5 style= "color:black">Password</h5><input type="password" class="form-control" name="password">
-						</div>
+				<div style="border: 1px solid #ddd; padding: 30px 40px;"> 
+					
+				<form action="" method="POST" class="form">
+					{% csrf_token %}
+					<div class="form-group">
+						<p>Email</p>
+						<input class="form-control" type="text" name="email">
 					</div>
-					<button  type="submit"style = "background-color:#9780e6;padding:5px"><h4>Sign In</h4></button>
+					<div class="form-group">
+						<p>Password</p>
+						<input class="form-control" type="password" name="password">
+					</div>
+					<button type="submit" class="btn btn-md btn-success">Signin</button>
+				</form>
 				</div>
 			</div>
-		</form>
+			<div class="col-md-4">
+				
+			</div>
+		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>ss
+{% endblock %}

@@ -1,46 +1,43 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      {% load static %}
-      <title>Sign up</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <link rel ="stylesheet" href = "{% static 'css/home.css' %}" type = "text/css" >
-   </head>
-   <body>
-      <nav class="navbar navbar-expand-lg navbar-light " id="a5">
-         <div class="container">
-            <a class="navbar-brand" href="" ><h5>Home</h5></a>
-            <div class="ab">
-               <a class="navbar-brand" href="{% url 'signin' %}"><h5>Signin</h5></a>
-               <a class="navbar-brand" href="{% url 'signup' %}"><h5>Signup</h5></a>
+{% extends 'base.html' %}
+{% block body %}
+   <div class="container">
+      <div class="row">
+         <div class="col-md-3">
+            
+         </div>
+         <div class="col-md-6">
+            <div style="text-align:center">
+               
+            <h4>New User? Signup here.</h4>
+            <br>
+            </div>
+            <div style="border: 1px solid #ddd; padding: 30px 40px;"> 
+               
+            <form action="" method="POST" class="form">
+               {% csrf_token %}
+               <div class="form-group">
+                  <p>First Name</p>
+                  <input class="form-control" type="text" name="fname">
+               </div>
+               <div class="form-group">
+                  <p>Last Name</p>
+                  <input class="form-control" type="text" name="lname">
+               </div>
+               <div class="form-group">
+                  <p>Email</p>
+                  <input class="form-control" type="text" name="email">
+               </div>
+               <div class="form-group">
+                  <p>Password</p>
+                  <input class="form-control" type="password" name="pass">
+               </div>
+               <button type="submit" class="btn btn-md btn-success">SignUp</button>
+            </form>
             </div>
          </div>
-      </nav>
-      <div class="container" id="signup">
-         <form action="" method="POST">
-                     {%csrf_token%}
-         <div class="card" style="width: 400px;height:400px;background-color:#d9ccff">
-            <div class="card-body">
-               <div class="col-xs-3">
-                     <h3>Not a user!! Sign Up here</h3>
-                     <h5 style = "color:black">Firstname </h5><input type="text" class="form-control" name="fname">
-                  </div>
-                  <div class="col-xs-3">
-                     <h5 style = "color:black">Last name</h5> <input type="text" class="form-control" name="lname">
-                  </div>
-                  <div class="col-xs-3">
-                     <h5 style = "color:black">Email</h5> <input type="email" class="form-control" name="email">
-                  </div>
-                  <div class="col-xs-3">
-                     <h5 style = "color:black"> Password</h5> <input type="password" class="form-control" name="pass">
-                  </div>
-               </div>
-               <button  type="submit"style = "background-color:#9780e6;padding:5px"><h5>Sign Up</h5></button>   </div>
-
-         </form>
-</div>
-</div>
-</div>
-
-   </body>
-</html>
+         <div class="col-md-3">
+            
+         </div>
+      </div>
+   </div>
+{% endblock %}

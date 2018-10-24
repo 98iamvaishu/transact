@@ -30,4 +30,5 @@ urlpatterns = [
     path('borrow/', borrower, name='borrow'),
     path('list1/', list1, name='list1'),
     path('paid/<int:borrowerid>/', paidfun, name='paid'),
+    path('history/<int:borid>/',history,name='history')
 ]

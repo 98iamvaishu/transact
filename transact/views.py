@@ -2,7 +2,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
-from transact.models import Lender, Borrower, Paid, History
+from transact.models import Lender, Borrower, Payments
 # Create your views here.
 
 
@@ -101,18 +101,18 @@ def paidfun(request,borrowerid):
 		date = request.POST.get('date')
 		pamt = float(request.POST.get('pamount'))
 		iamt = float(request.POST.get('iamount'))
-		paid = Paid(pay=ob, pamt=pamt, iamt=iamt)
-		paid.save()
+		paid = Payments.objects.create(borrower=ob, 
+								principal_amt=pamt, 
+								interest_amt=iamt, 
+								timestamp=date)		
 		ob.amount = float(ob.amount - pamt - iamt)
 		ob.intamt = round((float(ob.interest / 100) *
 						  float(ob.amount)) / float(ob.duration), 2)
 		ob.save()
 		print(ob.id)
-		his = History.objects.create(history=paid,date=date,pamount=pamt,iamount=iamt)
 		if ob.amount == 0:
 			ob.delete()
-
-		return redirect("/list1/")
+		return redirect(f"/history/{ob.id}")
 	return render(request, "paid.html", {"ob": ob})
 
 
@@ -157,3 +157,7 @@ def signin1(request):
 	return render(request, "signin1.html")
 
 
+def history(request,borid):
+	borrower = Borrower.objects.get(pk=borid)
+	history = Payments.objects.filter(borrower=borrower)
+	return render(request,"history.html",{"history":history, "borrower":borrower})

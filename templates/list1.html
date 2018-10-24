@@ -25,15 +25,15 @@
 			<div class = "row" style="margin-top:30px">
 				<div class="col-5">
 					{% for i in bor %}
+						
 						<div class="card"  style="width:800px;height:250px;pbackground-color:#d9ccff">
 							<div class="shadow-lg p-3 mb-5 bg-white rounded" id = "a">
 								<a href = "/paid/{{i.id}}/"><h3>{{i.name}}</h3></a>
-								<h5 class="card-text"> {{i.amount}}<br>{{i.interest}}<br>{{i.date}}<br>{{i.duration}}<br>{{i.intamt}}</h5> 
-								<button  type="submit"style = "background-color:#9780e6;padding:5px"><h4>See history</h4></button>
+								<h5 class="card-text"> {{i.amount}}<br>{{i.interest}}<br>{{i.date}}<br>{{i.duration}}<br>{{i.intamt}}</h5>
+								<a href="/history/{{i.id}}/">See History</a>
 							</div>
-							</div><hr>
+							
+							{%endfor%}
 						</div>
-						{%endfor%}
-					</div>
-				</body>
-			</html>
+					</body>
+				</html>

@@ -37,15 +37,7 @@ class Migration(migrations.Migration):
                 ('user', models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.CreateModel(
-            name='Paid',
-            fields=[
-                ('pay', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='transact.Borrower')),
-                ('name', models.CharField(blank=True, max_length=20, null=True)),
-                ('pamt', models.FloatField(blank=True, null=True)),
-                ('iamt', models.FloatField(blank=True, null=True)),
-            ],
-        ),
+       
         migrations.AddField(
             model_name='borrower',
             name='lender',

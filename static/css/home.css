@@ -1,13 +1,18 @@
 body
 {
-    background-image:url('{{ STATIC_URL }}images/sample.JPG');
-    background-repeat: no-repeat;
+    /*background-image:url('/static/images/back.jpg');
+    */background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 #a5
 {
 	background-color: #8860d0;
+	font-color:white;
+}
+h4
+{
+	color:white;
 }
 #signin
 {

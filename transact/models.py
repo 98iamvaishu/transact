@@ -11,6 +11,9 @@ class Lender(models.Model):
     initial_amount = models.IntegerField(blank=True, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+        return f"{self.user}"
+
 
 class Borrower(models.Model):
     name = models.CharField(max_length=20)
@@ -23,18 +26,14 @@ class Borrower(models.Model):
     lender = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     intamt = models.FloatField(blank=True, null=True)
 
+    def __str__(self):
+        return f"{self.name} | {self.lender}"
 
-class Paid(models.Model):
-    pay = models.ForeignKey(
-        Borrower, primary_key=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=20, null=True, blank=True)
-    pamt = models.FloatField(null=True, blank=True)
-    iamt = models.FloatField(null=True, blank=True)
-    date = models.DateField(null=True, blank=True)
+class Payments(models.Model):
+    borrower = models.ForeignKey(Borrower, on_delete=models.CASCADE)
+    principal_amt = models.FloatField(default=0.0)
+    interest_amt = models.FloatField(default=0.0)
+    timestamp = models.DateField()
 
-
-class History(models.Model):
-    history = models.OneToOneField(Paid, on_delete=models.CASCADE, null=True)
-    date = models.DateField(null=True, blank=True)
-    pamount = models.FloatField(null=True, blank=True)
-    iamount = models.FloatField(null=True, blank=True)
+    def __str__(self):
+        return f"{self.borrower} | {self.timestamp}"

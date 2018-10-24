@@ -10,7 +10,7 @@ body
 	background-color: #8860d0;
 	font-color:white;
 }
-h4
+h5
 {
 	color:white;
 }
@@ -35,7 +35,7 @@ h4
 	border-bottom-left-radius: 100px 100px;
 	border-bottom-width: 10px;
 	border-bottom:25px solid #5680e9;
-	padding:150px;
+	padding:100px;
 	background-color: #84ceed;
 	
 }
@@ -70,6 +70,6 @@ h4
 	border-bottom-left-radius: 100px 100px;
 	border-bottom-width: 10px;
 	border-bottom:20px solid #5680e9;
-	padding:200px;
+	padding:250px;
 	background-color: #84ceed;
 }

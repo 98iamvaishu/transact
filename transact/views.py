@@ -28,27 +28,27 @@ def logout1(request):
 
 
 def signup(request):
-	if request.method == "POST":
-		# username = request.POST.get['name']
-		fname = request.POST['fname']
-		lname = request.POST['lname']
-		password = request.POST['pass']
-		email = request.POST['email']
-		username = email
-		user = authenticate(request, username=email, email=email,
-							password=password, firstname=fname, lastname=lname)
+    if request.method == "POST":
+        # username = request.POST.get['name']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
+        password = request.POST['pass']
+        email = request.POST['email']
+        username = email
+        user = authenticate(request, username=email, email=email,
+                            password=password, firstname=fname, lastname=lname)
 
-		if user is None:
-			user = User.objects.create_user(username=email, email=email,
-											password=password, first_name=fname, last_name=lname)
-			lender = Lender.objects.create(user=user, name=fname)
-			login(request, user)
+        if user is None:
+            user = User.objects.create_user(username=email, email=email,
+                                            password=password, first_name=fname, last_name=lname)
+            lender = Lender.objects.create(user=user, name=fname)
+            login(request, user)
 
-			return redirect("/create/", {"fname": fname})
-			print(name)
-		else:
-			return HttpRespose("Already exists")
-	return render(request, "signup.html")
+            return redirect("/create/", {"fname": fname})
+            print(name)
+        else:
+            return HttpRespose("Already exists")
+    return render(request, "signup.html")
 
 
 def lender(request):
